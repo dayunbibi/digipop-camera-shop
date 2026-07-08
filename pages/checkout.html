@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Checkout | DigiPop Camera Shop</title>
+
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../checkout.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">DigiPop 📸</div>
+
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#brands">Brands</a>
+      <a href="../index.html#budget">Budget</a>
+      <a href="../index.html#products">Cameras</a>
+      <a href="cart.html">Cart 🛒</a>
+    </nav>
+  </header>
+
+  <main class="checkout-page">
+
+    <section class="checkout-hero">
+      <span class="sticker">CHECKOUT</span>
+      <h1>Complete Your Order</h1>
+      <p>
+        Enter your contact, shipping, and payment details to finish your DigiPop camera order.
+      </p>
+    </section>
+
+    <section class="checkout-section">
+
+      <div class="checkout-form-area">
+
+        <div class="checkout-card">
+          <h2>Contact Information</h2>
+
+          <form class="checkout-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" placeholder="Mina">
+              </div>
+
+              <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" placeholder="Kim">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="example@email.com">
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="123-456-7890">
+            </div>
+          </form>
+        </div>
+
+        <div class="checkout-card">
+          <h2>Shipping Address</h2>
+
+          <form class="checkout-form">
+            <div class="form-group">
+              <label for="address">Street Address</label>
+              <input type="text" id="address" placeholder="123 Camera Street">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" placeholder="Toronto">
+              </div>
+
+              <div class="form-group">
+                <label for="province">Province / State</label>
+                <input type="text" id="province" placeholder="ON">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="postal">Postal Code</label>
+                <input type="text" id="postal" placeholder="M2N 0A1">
+              </div>
+
+              <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country">
+                  <option>Canada</option>
+                  <option>United States</option>
+                  <option>International</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="checkout-card">
+          <h2>Payment Method</h2>
+
+          <div class="payment-options">
+            <label class="payment-option">
+              <input type="radio" name="payment" checked>
+              <span>Credit Card</span>
+            </label>
+
+            <label class="payment-option">
+              <input type="radio" name="payment">
+              <span>PayPal</span>
+            </label>
+
+            <label class="payment-option">
+              <input type="radio" name="payment">
+              <span>Demo Payment</span>
+            </label>
+          </div>
+
+          <form class="checkout-form">
+            <div class="form-group">
+              <label for="card-number">Card Number</label>
+              <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="expiry">Expiry Date</label>
+                <input type="text" id="expiry" placeholder="MM/YY">
+              </div>
+
+              <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" placeholder="123">
+              </div>
+            </div>
+          </form>
+
+          <p class="demo-note">
+            This is a portfolio demo checkout page. No real payment will be processed.
+          </p>
+        </div>
+
+      </div>
+
+      <aside class="checkout-summary">
+        <h2>Order Summary</h2>
+
+        <div class="summary-product">
+          <img src="../images/sony-1.jpg" alt="Sony Cyber-shot W830">
+          <div>
+            <h3>Sony Cyber-shot W830</h3>
+            <p>Qty 1</p>
+          </div>
+          <strong>$199</strong>
+        </div>
+
+        <div class="summary-product">
+          <img src="../images/canon-1.jpg" alt="Canon PowerShot ELPH">
+          <div>
+            <h3>Canon PowerShot ELPH</h3>
+            <p>Qty 1</p>
+          </div>
+          <strong>$249</strong>
+        </div>
+
+        <div class="summary-line">
+          <span>Subtotal</span>
+          <strong>$448</strong>
+        </div>
+
+        <div class="summary-line">
+          <span>Shipping</span>
+          <strong>Free</strong>
+        </div>
+
+        <div class="summary-line">
+          <span>Discount</span>
+          <strong>-$20</strong>
+        </div>
+
+        <div class="summary-total">
+          <span>Total</span>
+          <strong>$428</strong>
+        </div>
+
+        <a href="order-confirmation.html" class="place-order-btn">Place Order</a>
+        <a href="cart.html" class="back-cart-btn">Back to Cart</a>
+      </aside>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 DigiPop Camera Shop</p>
+    <p>
+      <a href="#">Instagram</a> ·
+      <a href="contact.html">Contact</a> ·
+      <a href="shipping.html">Shipping</a> ·
+      <a href="returns.html">Returns</a>
+    </p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

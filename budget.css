@@ -1,0 +1,153 @@
+.budget-page {
+  background: #fff7fb;
+}
+
+/* Budget Hero */
+.budget-hero {
+  padding: 80px 8%;
+  text-align: center;
+  background: linear-gradient(135deg, #ffe1f2, #d9f7ff);
+  border-bottom: 3px solid #111;
+}
+
+.budget-hero h1 {
+  font-size: 60px;
+  line-height: 1.05;
+  margin-bottom: 18px;
+}
+
+.budget-hero p {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 20px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Budget Products */
+.budget-products {
+  padding: 80px 8%;
+}
+
+.budget-note {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  background: #ffffff;
+  border: 3px solid #111;
+  border-radius: 32px;
+  box-shadow: 10px 10px 0 #111;
+  padding: 34px;
+  text-align: center;
+}
+
+.budget-note h2 {
+  font-size: 38px;
+  margin-bottom: 16px;
+}
+
+.budget-note p {
+  color: #444;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.budget-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.page-actions {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+
+/* Tablet */
+@media (max-width: 1050px) {
+  .budget-products {
+    padding: 70px 8%;
+  }
+
+  .budget-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+  .budget-hero {
+    padding: 60px 6%;
+  }
+
+  .budget-hero h1 {
+    font-size: 44px;
+  }
+
+  .budget-hero p {
+    font-size: 18px;
+  }
+
+  .budget-products {
+    padding: 56px 6%;
+  }
+
+  .budget-note {
+    padding: 28px;
+    border-radius: 28px;
+    box-shadow: 6px 6px 0 #111;
+    margin-bottom: 50px;
+  }
+
+  .budget-note h2 {
+    font-size: 32px;
+  }
+
+  .budget-note p {
+    font-size: 17px;
+  }
+
+  .budget-product-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .page-actions {
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  .page-actions .btn {
+    width: 100%;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 430px) {
+  .budget-hero {
+    padding: 50px 6%;
+  }
+
+  .budget-hero h1 {
+    font-size: 38px;
+  }
+
+  .budget-hero p {
+    font-size: 16px;
+  }
+
+  .budget-products {
+    padding: 44px 6%;
+  }
+
+  .budget-note {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .budget-note h2 {
+    font-size: 28px;
+  }
+}
