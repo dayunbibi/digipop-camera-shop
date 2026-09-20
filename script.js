@@ -9,47 +9,12 @@ const ORDER_STORAGE_KEY = "digipop-last-order";
 const WISHLIST_STORAGE_KEY = "digipop-wishlist";
 const RECENTLY_VIEWED_STORAGE_KEY = "digipop-recently-viewed";
 
-const PRODUCTS = {
-  "sony-w830": {
-    id: "sony-w830",
-    name: "Sony Cyber-shot W830",
-    brand: "Sony",
-    price: 199,
-    image: "sony-1.jpg",
-    page: "sony-w830.html",
-    description: "Classic black compact daily camera."
-  },
-
-  "canon-elph": {
-    id: "canon-elph",
-    name: "Canon PowerShot ELPH",
-    brand: "Canon",
-    price: 249,
-    image: "canon-1.jpg",
-    page: "canon-elph.html",
-    description: "Soft colors and daily photo mood."
-  },
-
-  "nikon-s6900": {
-    id: "nikon-s6900",
-    name: "Nikon Coolpix S6900",
-    brand: "Nikon",
-    price: 299,
-    image: "nikon-1.jpg",
-    page: "nikon-s6900.html",
-    description: "Flip screen, selfie-friendly camera."
-  },
-
-  "sony-tx30": {
-    id: "sony-tx30",
-    name: "Sony DSC-TX30",
-    brand: "Sony",
-    price: 329,
-    image: "sony-2.jpg",
-    page: "sony-tx30.html",
-    description: "Slim design with trendy digital look."
-  }
-};
+/*
+  PRODUCTS is the single source of truth for all product data
+  (id, name, brand, price, image, page, description, tag, search).
+  It is defined in products.js, which every page loads via
+  <script src="products.js"> before this file.
+*/
 
 /* =========================================================
    General Helpers
@@ -146,6 +111,134 @@ function getProductIdFromCard(card) {
   };
 
   return filenameMap[filename] || null;
+}
+
+/* =========================================================
+   Product Listing Cards
+========================================================= */
+
+function createProductCardHTML(product, options) {
+  const cardTag = options.cardTag;
+
+  const searchAttribute = options.includeSearch
+    ? ` data-search="${escapeHTML(product.search)}"`
+    : "";
+
+  return `
+    <${cardTag} class="product-card"${searchAttribute}>
+      <span class="tag">${escapeHTML(product.tag)}</span>
+
+      <div class="product-img">
+        <img
+          src="${escapeHTML(getImagePath(product.image))}"
+          alt="${escapeHTML(product.name)}"
+        >
+      </div>
+
+      <h3>${escapeHTML(product.name)}</h3>
+
+      <p class="brand">${escapeHTML(product.brand)}</p>
+
+      <p class="price">${formatPrice(product.price)}</p>
+
+      <p class="desc">
+        ${escapeHTML(product.description.replace(/\.$/, ""))}
+      </p>
+
+      <a
+        href="${escapeHTML(getProductPagePath(product.page))}"
+        class="cart-btn"
+      >
+        View Details
+      </a>
+    </${cardTag}>
+  `;
+}
+
+const PRODUCT_LISTING_PAGES = {
+  "index.html": {
+    selector: "#camera-product-grid",
+    filter: () => true,
+    cardTag: "article",
+    includeSearch: true,
+    mode: "prepend"
+  },
+
+  "sony.html": {
+    selector: ".brand-product-grid",
+    filter: (product) => product.brand === "Sony",
+    cardTag: "div",
+    includeSearch: false,
+    mode: "replace"
+  },
+
+  "canon.html": {
+    selector: ".brand-product-grid",
+    filter: (product) => product.brand === "Canon",
+    cardTag: "div",
+    includeSearch: false,
+    mode: "replace"
+  },
+
+  "nikon.html": {
+    selector: ".brand-product-grid",
+    filter: (product) => product.brand === "Nikon",
+    cardTag: "div",
+    includeSearch: false,
+    mode: "replace"
+  },
+
+  "under-200.html": {
+    selector: ".budget-product-grid",
+    filter: (product) => product.price < 200,
+    cardTag: "div",
+    includeSearch: false,
+    mode: "replace"
+  },
+
+  "under-300.html": {
+    selector: ".budget-product-grid",
+    filter: (product) => product.price < 300,
+    cardTag: "div",
+    includeSearch: false,
+    mode: "replace"
+  }
+};
+
+function renderProductListingCards() {
+  const config =
+    PRODUCT_LISTING_PAGES[getCurrentFilename()];
+
+  if (!config) {
+    return;
+  }
+
+  const container = document.querySelector(
+    config.selector
+  );
+
+  if (!container) {
+    return;
+  }
+
+  const cardsHTML = Object.values(PRODUCTS)
+    .filter(config.filter)
+    .map((product) => {
+      return createProductCardHTML(product, {
+        cardTag: config.cardTag,
+        includeSearch: config.includeSearch
+      });
+    })
+    .join("");
+
+  if (config.mode === "prepend") {
+    container.insertAdjacentHTML(
+      "afterbegin",
+      cardsHTML
+    );
+  } else {
+    container.innerHTML = cardsHTML;
+  }
 }
 
 /* =========================================================
@@ -2695,6 +2788,8 @@ function initializeCameraSearchAndFilter() {
 
 function initializeApp() {
   addDynamicStyles();
+
+  renderProductListingCards();
 
   createWishlistNavigationLink();
   createProductCardWishlistButtons();
