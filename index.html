@@ -1,19 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Shop cute Sony, Canon, and Nikon digital cameras at DigiPop Camera Shop."
+  >
 
   <title>DigiPop Camera Shop</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Product Search */
+    .camera-search {
+      max-width: 760px;
+      margin: 0 auto 48px;
+      padding: 28px;
+      background: #ffffff;
+      border: 3px solid #111;
+      border-radius: 28px;
+      box-shadow: 8px 8px 0 #111;
+    }
+
+    .camera-search label {
+      display: block;
+      margin-bottom: 14px;
+      font-size: 22px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .search-input-wrap {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+    }
+
+    .camera-search input {
+      width: 100%;
+      min-width: 0;
+      padding: 16px 18px;
+      background: #fff7fb;
+      border: 3px solid #111;
+      border-radius: 18px;
+      outline: none;
+      font-family: inherit;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .camera-search input:focus {
+      background: #ffffff;
+      box-shadow: 4px 4px 0 #111;
+    }
+
+    .search-clear-btn {
+      padding: 14px 22px;
+      background: #c7ff1a;
+      color: #111;
+      border: 3px solid #111;
+      border-radius: 18px;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .search-clear-btn:hover {
+      background: #111;
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .search-status {
+      min-height: 24px;
+      margin-top: 16px;
+      color: #555;
+      font-size: 15px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .search-no-results {
+      display: none;
+      grid-column: 1 / -1;
+      padding: 38px 24px;
+      background: #ffffff;
+      border: 3px solid #111;
+      border-radius: 28px;
+      box-shadow: 8px 8px 0 #111;
+      text-align: center;
+    }
+
+    .search-no-results.is-visible {
+      display: block;
+    }
+
+    .search-no-results h3 {
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+
+    .search-no-results p {
+      color: #555;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 760px) {
+      .camera-search {
+        margin-bottom: 38px;
+        padding: 22px;
+        border-radius: 24px;
+        box-shadow: 6px 6px 0 #111;
+      }
+
+      .camera-search label {
+        font-size: 20px;
+      }
+
+      .search-input-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .search-clear-btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
+  <!-- Header -->
   <header class="header">
-    <div class="logo">DigiPop 📸</div>
+    <a
+      href="index.html"
+      class="logo"
+      aria-label="DigiPop Camera Shop home"
+      style="text-decoration: none;"
+    >
+      DigiPop 📸
+    </a>
 
-    <nav class="nav">
+    <nav class="nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="#brands">Brands</a>
       <a href="#budget">Budget</a>
@@ -22,6 +160,7 @@
     </nav>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
     <div class="hero-text">
       <span class="sticker">Y2K PICK</span>
@@ -33,168 +172,383 @@
       </p>
 
       <div class="hero-buttons">
-        <a href="#products" class="btn primary">Shop Now</a>
-        <a href="pages/under-300.html" class="btn secondary">Under $300</a>
+        <a href="#products" class="btn primary">
+          Shop Now
+        </a>
+
+        <a href="pages/under-300.html" class="btn secondary">
+          Under $300
+        </a>
       </div>
     </div>
 
     <div class="hero-image">
       <div class="camera-card">
-        <img src="images/hero-collage.webp" alt="Pink Y2K digital camera collection">
+        <img
+          src="images/hero-collage.webp"
+          alt="Pink Y2K digital camera collection"
+        >
       </div>
     </div>
   </section>
 
+  <!-- Brands -->
   <section class="section" id="brands">
     <h2>Shop by Brand</h2>
-    <p class="section-subtitle">Choose your favorite camera brand</p>
+
+    <p class="section-subtitle">
+      Choose your favorite camera brand
+    </p>
 
     <div class="brand-grid">
+
       <a href="pages/sony.html" class="brand-card pink">
         <div class="brand-img">
-          <img src="images/sonybannerimage.jpg" alt="Pink Sony digital camera">
+          <img
+            src="images/sonybannerimage.jpg"
+            alt="Pink Sony digital camera"
+          >
         </div>
+
         <h3>Sony</h3>
+
         <p>Sharp, compact, stylish</p>
       </a>
 
       <a href="pages/canon.html" class="brand-card yellow">
         <div class="brand-img">
-          <img src="images/canonbannerimage.jpg" alt="Pink Canon digital camera">
+          <img
+            src="images/canonbannerimage.jpg"
+            alt="Pink Canon digital camera"
+          >
         </div>
+
         <h3>Canon</h3>
+
         <p>Soft colors, cute daily shots</p>
       </a>
 
       <a href="pages/nikon.html" class="brand-card blue">
         <div class="brand-img">
-          <img src="images/nikonbannerimage.jpg" alt="Pink Nikon digital camera">
+          <img
+            src="images/nikonbannerimage.jpg"
+            alt="Pink Nikon digital camera"
+          >
         </div>
+
         <h3>Nikon</h3>
+
         <p>Classic mood, clear photos</p>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Budget -->
+  <section class="section" id="budget">
+    <h2>Shop by Budget</h2>
+
+    <p class="section-subtitle">
+      Find cameras by your price range
+    </p>
+
+    <div class="budget-grid">
+      <a href="pages/under-200.html" class="budget-btn">
+        Under $200
+      </a>
+
+      <a href="pages/under-300.html" class="budget-btn">
+        Under $300
+      </a>
+
+      <a href="#products" class="budget-btn">
+        Under $500
+      </a>
+
+      <a href="#products" class="budget-btn">
+        Premium Picks
       </a>
     </div>
   </section>
 
-  <section class="section" id="budget">
-    <h2>Shop by Budget</h2>
-    <p class="section-subtitle">Find cameras by your price range</p>
-
-    <div class="budget-grid">
-      <a href="pages/under-200.html" class="budget-btn">Under $200</a>
-      <a href="pages/under-300.html" class="budget-btn">Under $300</a>
-      <a href="#products" class="budget-btn">Under $500</a>
-      <a href="#products" class="budget-btn">Premium Picks</a>
-    </div>
-  </section>
-
+  <!-- Collections -->
   <section class="section collections">
     <h2>Featured Collections</h2>
-    <p class="section-subtitle">Shop cameras by your photo style</p>
+
+    <p class="section-subtitle">
+      Shop cameras by your photo style
+    </p>
 
     <div class="collection-grid">
-      <div class="collection-card">
+
+      <article class="collection-card">
         <div class="collection-icon">📸</div>
+
         <h3>Y2K Selfie Picks</h3>
-        <p>Compact cameras with cute colors, flash mood, and selfie-friendly design.</p>
-      </div>
 
-      <div class="collection-card">
+        <p>
+          Compact cameras with cute colors, flash mood,
+          and selfie-friendly design.
+        </p>
+      </article>
+
+      <article class="collection-card">
         <div class="collection-icon">✨</div>
-        <h3>Beginner Friendly</h3>
-        <p>Easy-to-use digital cameras for students, daily photos, and first-time users.</p>
-      </div>
 
-      <div class="collection-card">
+        <h3>Beginner Friendly</h3>
+
+        <p>
+          Easy-to-use digital cameras for students,
+          daily photos, and first-time users.
+        </p>
+      </article>
+
+      <article class="collection-card">
         <div class="collection-icon">✈️</div>
+
         <h3>Travel Cameras</h3>
-        <p>Lightweight cameras for trips, school days, city walks, and memories.</p>
-      </div>
+
+        <p>
+          Lightweight cameras for trips, school days,
+          city walks, and memories.
+        </p>
+      </article>
+
     </div>
   </section>
 
+  <!-- Products -->
   <section class="section" id="products">
     <h2>Trending Digital Cameras</h2>
-    <p class="section-subtitle">Popular digital cameras right now</p>
 
-    <div class="product-grid">
+    <p class="section-subtitle">
+      Popular digital cameras right now
+    </p>
 
-      <div class="product-card">
+    <!-- Search -->
+    <div class="camera-search">
+      <label for="camera-search-input">
+        🔍 Search Cameras
+      </label>
+
+      <div class="search-input-wrap">
+        <input
+          type="search"
+          id="camera-search-input"
+          placeholder="Search Sony, Canon, Nikon, W830..."
+          autocomplete="off"
+          aria-describedby="camera-search-status"
+        >
+
+        <button
+          type="button"
+          class="search-clear-btn"
+          id="camera-search-clear"
+        >
+          Clear
+        </button>
+      </div>
+
+      <p
+        class="search-status"
+        id="camera-search-status"
+        aria-live="polite"
+      >
+        Showing all 4 cameras
+      </p>
+    </div>
+
+    <div class="product-grid" id="camera-product-grid">
+
+      <!-- Sony W830 -->
+      <article
+        class="product-card"
+        data-search="sony cyber-shot w830 sony compact black beginner daily y2k hot 199"
+      >
         <span class="tag">HOT</span>
+
         <div class="product-img">
-          <img src="images/sony-1.jpg" alt="Sony Cyber-shot W830">
+          <img
+            src="images/sony-1.jpg"
+            alt="Sony Cyber-shot W830"
+          >
         </div>
+
         <h3>Sony Cyber-shot W830</h3>
+
         <p class="brand">Sony</p>
+
         <p class="price">$199</p>
-        <p class="desc">Compact, cute, beginner-friendly</p>
-        <a href="pages/sony-w830.html" class="cart-btn">View Details</a>
-      </div>
 
-      <div class="product-card">
+        <p class="desc">
+          Compact, cute, beginner-friendly
+        </p>
+
+        <a
+          href="pages/sony-w830.html"
+          class="cart-btn"
+        >
+          View Details
+        </a>
+      </article>
+
+      <!-- Canon ELPH -->
+      <article
+        class="product-card"
+        data-search="canon powershot elph canon silver soft colors daily y2k 249"
+      >
         <span class="tag">Y2K</span>
+
         <div class="product-img">
-          <img src="images/canon-1.jpg" alt="Canon PowerShot ELPH">
+          <img
+            src="images/canon-1.jpg"
+            alt="Canon PowerShot ELPH"
+          >
         </div>
+
         <h3>Canon PowerShot ELPH</h3>
+
         <p class="brand">Canon</p>
+
         <p class="price">$249</p>
-        <p class="desc">Soft colors and daily photo mood</p>
-        <a href="pages/canon-elph.html" class="cart-btn">View Details</a>
-      </div>
 
-      <div class="product-card">
+        <p class="desc">
+          Soft colors and daily photo mood
+        </p>
+
+        <a
+          href="pages/canon-elph.html"
+          class="cart-btn"
+        >
+          View Details
+        </a>
+      </article>
+
+      <!-- Nikon S6900 -->
+      <article
+        class="product-card"
+        data-search="nikon coolpix s6900 nikon white selfie flip screen travel best 299"
+      >
         <span class="tag">BEST</span>
-        <div class="product-img">
-          <img src="images/nikon-1.jpg" alt="Nikon Coolpix S6900">
-        </div>
-        <h3>Nikon Coolpix S6900</h3>
-        <p class="brand">Nikon</p>
-        <p class="price">$299</p>
-        <p class="desc">Flip screen, selfie-friendly camera</p>
-        <a href="pages/nikon-s6900.html" class="cart-btn">View Details</a>
-      </div>
 
-      <div class="product-card">
-        <span class="tag">NEW</span>
         <div class="product-img">
-          <img src="images/sony-2.jpg" alt="Sony DSC-TX30">
+          <img
+            src="images/nikon-1.jpg"
+            alt="Nikon Coolpix S6900"
+          >
         </div>
+
+        <h3>Nikon Coolpix S6900</h3>
+
+        <p class="brand">Nikon</p>
+
+        <p class="price">$299</p>
+
+        <p class="desc">
+          Flip screen, selfie-friendly camera
+        </p>
+
+        <a
+          href="pages/nikon-s6900.html"
+          class="cart-btn"
+        >
+          View Details
+        </a>
+      </article>
+
+      <!-- Sony TX30 -->
+      <article
+        class="product-card"
+        data-search="sony dsc tx30 sony silver slim travel compact new trendy y2k 329"
+      >
+        <span class="tag">NEW</span>
+
+        <div class="product-img">
+          <img
+            src="images/sony-2.jpg"
+            alt="Sony DSC-TX30"
+          >
+        </div>
+
         <h3>Sony DSC-TX30</h3>
+
         <p class="brand">Sony</p>
+
         <p class="price">$329</p>
-        <p class="desc">Slim design with trendy digital look</p>
-        <a href="pages/sony-tx30.html" class="cart-btn">View Details</a>
+
+        <p class="desc">
+          Slim design with trendy digital look
+        </p>
+
+        <a
+          href="pages/sony-tx30.html"
+          class="cart-btn"
+        >
+          View Details
+        </a>
+      </article>
+
+      <!-- No Results -->
+      <div
+        class="search-no-results"
+        id="camera-search-empty"
+        role="status"
+      >
+        <h3>No cameras found</h3>
+
+        <p>
+          Try searching for Sony, Canon, Nikon,
+          W830, ELPH, S6900, or TX30.
+        </p>
       </div>
 
     </div>
   </section>
 
+  <!-- Reviews -->
   <section class="section reviews">
     <h2>Customer Reviews</h2>
-    <p class="section-subtitle">What camera lovers say about DigiPop</p>
+
+    <p class="section-subtitle">
+      What camera lovers say about DigiPop
+    </p>
 
     <div class="review-grid">
-      <div class="review-card">
+
+      <article class="review-card">
         <p class="stars">★★★★★</p>
-        <p>“The camera looks cute and is perfect for daily photos.”</p>
+
+        <p>
+          “The camera looks cute and is perfect for daily photos.”
+        </p>
+
         <h4>- Mina</h4>
-      </div>
+      </article>
 
-      <div class="review-card">
+      <article class="review-card">
         <p class="stars">★★★★★</p>
-        <p>“I found a budget-friendly digital camera for my school project.”</p>
-        <h4>- Alex</h4>
-      </div>
 
-      <div class="review-card">
+        <p>
+          “I found a budget-friendly digital camera for my school project.”
+        </p>
+
+        <h4>- Alex</h4>
+      </article>
+
+      <article class="review-card">
         <p class="stars">★★★★☆</p>
-        <p>“The Y2K style recommendations made it easy to choose.”</p>
+
+        <p>
+          “The Y2K style recommendations made it easy to choose.”
+        </p>
+
         <h4>- Jamie</h4>
-      </div>
+      </article>
+
     </div>
   </section>
 
+  <!-- About -->
   <section class="about">
     <h2>Why DigiPop?</h2>
 
@@ -206,12 +560,17 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="footer">
     <p>© 2026 DigiPop Camera Shop</p>
+
     <p>
-      <a href="#">Instagram</a> ·
-      <a href="pages/contact.html">Contact</a> ·
-      <a href="pages/shipping.html">Shipping</a> ·
+      <a href="#">Instagram</a>
+      ·
+      <a href="pages/contact.html">Contact</a>
+      ·
+      <a href="pages/shipping.html">Shipping</a>
+      ·
       <a href="pages/returns.html">Returns</a>
     </p>
   </footer>

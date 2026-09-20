@@ -12,14 +12,14 @@
 <body>
 
   <header class="header">
-    <div class="logo">DigiPop 📸</div>
+    <a href="../index.html" class="logo">DigiPop 📸</a>
 
-    <nav class="nav">
+    <nav class="nav" aria-label="Main navigation">
       <a href="../index.html">Home</a>
       <a href="../index.html#brands">Brands</a>
       <a href="../index.html#budget">Budget</a>
       <a href="../index.html#products">Cameras</a>
-      <a href="cart.html">Cart 🛒</a>
+      <a href="cart.html" aria-current="page">Cart 🛒</a>
     </nav>
   </header>
 
@@ -28,67 +28,25 @@
     <section class="cart-hero">
       <span class="sticker">SHOPPING BAG</span>
       <h1>Your Cart</h1>
-      <p>Review your cute digital camera picks before checkout.</p>
+      <p>Review your digital camera picks before checkout.</p>
     </section>
 
-    <section class="cart-section">
+    <section class="cart-section" aria-label="Shopping cart">
 
-      <div class="cart-items">
-
-        <div class="cart-item">
-          <a href="sony-w830.html" class="cart-img">
-            <img src="../images/sony-1.jpg" alt="Sony Cyber-shot W830">
-          </a>
-
-          <div class="cart-info">
-            <h2>
-              <a href="sony-w830.html">Sony Cyber-shot W830</a>
-            </h2>
-            <p class="cart-brand">Sony</p>
-            <p class="cart-desc">Classic black compact daily camera.</p>
-          </div>
-
-          <div class="cart-qty">
-            <span>Qty</span>
-            <strong>1</strong>
-          </div>
-
-          <div class="cart-price">
-            $199
-          </div>
+      <div class="cart-items" aria-live="polite">
+        <div class="empty-cart-message">
+          <div class="empty-cart-icon" aria-hidden="true">🛒</div>
+          <h2>Loading your cart...</h2>
+          <p>Your saved camera picks will appear here.</p>
         </div>
-
-        <div class="cart-item">
-          <a href="canon-elph.html" class="cart-img">
-            <img src="../images/canon-1.jpg" alt="Canon PowerShot ELPH">
-          </a>
-
-          <div class="cart-info">
-            <h2>
-              <a href="canon-elph.html">Canon PowerShot ELPH</a>
-            </h2>
-            <p class="cart-brand">Canon</p>
-            <p class="cart-desc">Soft colors and daily photo mood.</p>
-          </div>
-
-          <div class="cart-qty">
-            <span>Qty</span>
-            <strong>1</strong>
-          </div>
-
-          <div class="cart-price">
-            $249
-          </div>
-        </div>
-
       </div>
 
-      <aside class="cart-summary">
+      <aside class="cart-summary" aria-label="Order summary">
         <h2>Order Summary</h2>
 
         <div class="summary-row">
           <span>Subtotal</span>
-          <strong>$448</strong>
+          <strong>$0</strong>
         </div>
 
         <div class="summary-row">
@@ -98,16 +56,17 @@
 
         <div class="summary-row">
           <span>Discount</span>
-          <strong>-$20</strong>
+          <strong>$0</strong>
         </div>
 
         <div class="summary-total">
           <span>Total</span>
-          <strong>$428</strong>
+          <strong>$0</strong>
         </div>
 
-        <a href="checkout.html" class="checkout-btn">Checkout</a>
-        <a href="../index.html#products" class="continue-btn">Continue Shopping</a>
+        <a href="../index.html#products" class="continue-btn">
+          Continue Shopping
+        </a>
       </aside>
 
     </section>
